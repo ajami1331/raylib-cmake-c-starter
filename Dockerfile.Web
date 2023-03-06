@@ -11,7 +11,7 @@ COPY CMakeLists.txt CMakeLists.txt
 
 RUN chmod +x ./scripts/*
 
-RUN ./scripts/build-web.sh .
+RUN ./scripts/build-wasm-web.sh .
 
 FROM busybox:latest
 
