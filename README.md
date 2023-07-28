@@ -8,4 +8,4 @@ Currently only windows binary is produced on Dekstop.
 
 ## Example:
 
-- [Sokoban](https://github.com/CLown1331/Sokoban/tree/main/raylib_c)
+- [Sokoban](https://github.com/ajami1331/Sokoban/tree/main/raylib_c)
