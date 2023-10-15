@@ -7,7 +7,7 @@ void draw_game_area_border(void);
 
 void game_init(void)
 {
-    InitWindow(480, 880, "tetris");
+    InitWindow(480, 880, "raylib-cmake-c-starter");
 
     SetTargetFPS(60);
 }

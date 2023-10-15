@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.11) # FetchContent is available in 3.11+
-project(tetris VERSION 0.1.0 LANGUAGES C)
+project(raylib-cmake-c-starter VERSION 0.1.0 LANGUAGES C)
 
 # Generate compile_commands.json
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
