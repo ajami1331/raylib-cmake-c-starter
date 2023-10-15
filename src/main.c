@@ -1,39 +1,33 @@
 #include "raylib.h"
 #if defined(PLATFORM_WEB)
 #include <emscripten/emscripten.h>
+#include "game/game.h"
+#else
+#include "base/game.h"
 #endif
-
-void update_draw_frame(void);
 
 int main(void)
 {
     SetTraceLogLevel(LOG_LEVEL);
 
-    InitWindow(800, 500, "Raylib Cmake C Template");
+#if _DEBUG || DEBUG_MODE
+    TraceLog(LOG_INFO, "Debug build!");
+#endif // _DEBUG || DEBUG_MODE
 
-    SetTargetFPS(60);
+    game_load_code();
+
+    game_init();
 
 #if defined(PLATFORM_WEB)
-    emscripten_set_main_loop(update_draw_frame, 0, 1);
+    emscripten_set_main_loop(game_tick, 0, 1);
 #else
-    while (!WindowShouldClose())
+    while (game_should_continue())
     {
-        update_draw_frame();
+        game_tick();
     }
 #endif
 
-    CloseWindow();
+    game_shutdown();
 
     return 0;
-}
-
-void update_draw_frame(void)
-{
-    BeginDrawing();
-
-    ClearBackground(RAYWHITE);
-
-    DrawText("Hello World!", 190, 200, 20, LIGHTGRAY);
-
-    EndDrawing();
 }
