@@ -14,7 +14,7 @@ if (CMAKE_COMPILER_IS_GNUCC)
 endif()
 
 # Dependencies
-set(RAYLIB_VERSION 4.5.0)
+set(RAYLIB_VERSION 5.0)
 if (NOT ${PLATFORM} STREQUAL "Web")
   set(BUILD_SHARED_LIBS ON CACHE BOOL "" FORCE)
 endif()
